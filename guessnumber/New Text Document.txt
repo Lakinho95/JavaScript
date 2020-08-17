@@ -1,0 +1,25 @@
+import random
+print('Hello, enter your name')
+name = input()
+print('Hi ' + name + ' try to guess number between 1 and 20')
+guessnumber = random.randint(1,21)
+
+for guesstaken in range(1,7):
+    print('Take a guess')
+    number_of_guess = 0
+    try:
+        guess = int(input())
+        if guess > guessnumber:
+            print('Take a lower guess')
+        elif guess < guessnumber:
+            print('Take a higher guess')
+        else:
+            break
+
+
+    except:
+        print("Enter the number")
+if guess == guessnumber:
+    print('Good job ' + name + ' , your guessed number in ' + str(guesstaken) + ' guesses')
+else:
+    print("The number i was thinking was " + str(guessnumber))
